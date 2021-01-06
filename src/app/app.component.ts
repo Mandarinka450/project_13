@@ -25,7 +25,13 @@ export class AppComponent {
       this.workers.splice(index, 1);
     }
   }
-
+  onEditWorker(editWorker){
+    let index = this.workers.findIndex((worker) => worker.id === editWorker.id);
+    console.log(this.workers)
+    if (index !== -1) {
+      this.workers.splice(index, 1, editWorker);
+    }
+  }
   onAddWorker(worker) {
     let id =
       this.workers.length > 0
